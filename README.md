@@ -1,1 +1,50 @@
 "#k_7MachineLearning" 
+1)환경설정
+pyhton 3.11.x
+
+install matplotlib scikit-learn numpy pandas
+
+vscode
+open folder-c드라이브 내 폴더 선택
+확장플러그인-python, python debugger(최종 .py 파일 실행을 위해서)
+	     jupyter,jupyter keymap, jupyter slide show, jupyter cell tags, jupyter notebook renderers (ML의 경우, 중간과정을 확인해야해서)
+
+2)지도학습-기울기 구하기
+  
+3) 문제와 데이터 이해하기
+문제 정의-문제를 보고 회귀로 풀지, 분류로 풀지
+데이터-숫자로 데이터 표기
+문제가 주어졌을 때, 빠르게 분석하는 것이 이 책의 교육과정의 목표이다.
+
+4) 머신 러닝
+데이터 
+모델(학습)
+예측
+검증
+
+
+5) 독립변인, X, 특성
+	data, 종속변인 , y, 타겟
+
+	data가 딕셔너리일 때,
+	iris_database.keys()
+	#'data'                샘플       
+	#'feature_names'       특징
+	#'target_names'        답안지 (붓꽃 3종류)
+
+	iris_database['feature_names']
+	iris_database['data'].shape
+	iris_database['target_names'] 
+
+6) train, test 데이터 나누기
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test =train_test_split(iris_database['data'], iris_database['target'], random_state=42)
+
+*random_state=0 또는 42로 설정 시, 똑같은 데이터셋이 나온다. 교육용일 떄는 이미 완성된 알고리즘이기에 확인하려고 코드 돌리는 것이니 random_state 설정한다.
+하지만 프로젝트 할 때나 최적의 알고리즘을  찾아야 하는 경우에는 , random_state를 지워야 함.
+
+7)과대적합 : 새로운 데이터에 일반화 되기 어렵다/문제 발생 시 해결법이 없다
+
+  과소적합 : 문제 발생 시 더 많은 데이터를 통해 해결한다.
+
+  *선형,이웃 알고리즘은 파라미터가 작을 때 주로 쓰며, 이 알고리즘들은 단순하기에 과대적합이 일어날 가능성이 높다
