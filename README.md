@@ -1,5 +1,5 @@
 "#k_7MachineLearning" 
-1)환경설정
+1-1)환경설정
 pyhton 3.11.x
 
 install matplotlib scikit-learn numpy pandas
@@ -8,6 +8,29 @@ vscode
 open folder-c드라이브 내 폴더 선택
 확장플러그인-python, python debugger(최종 .py 파일 실행을 위해서)
 	     jupyter,jupyter keymap, jupyter slide show, jupyter cell tags, jupyter notebook renderers (ML의 경우, 중간과정을 확인해야해서)
+
+1-2) vscode에서 그래프 출력을 위한 환경 설정
+#라이브러리 먼저 선언하고 preamble를 뒤에 써줘야 함
+import pandas as pd
+import mglearn 
+import preamble
+
+#Graphviz 2.38 설치 후 "런타임 오류: Graphviz 실행 파일이 시스템 경로에 있는지 확인하세요
+import os
+os.environ["PATH"] += os.pathsep + 'C:\Program Files\Graphviz\bin'
+
+#트리가 안 보일 때 ModuleNotFoundError: No module named 'graphviz'
+https://graphviz.org/download/  graphviz-12.0.0(64-bit) EXE installer (all users)
+터미널에서 pip install graphviz
+
+#폰트 설정 다시 해야함
+윈도우, 리눅스, macOS 전부 동일
+pip install git+https://github.com/sigmadream/koreanize-matplotlib.git
+import koreanize_matplotlib(preamble.py에 추가)
+기존의 한국어 설정 주석 처리
+# plt.rcParams['font.family']='Malgun Gothic'
+# plt.rcParams['font.size']=9
+
 
 2)지도학습-기울기 구하기
   
