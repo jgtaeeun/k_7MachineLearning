@@ -9,6 +9,7 @@ from cycler import cycler
 set_matplotlib_formats('pdf', 'png')
 plt.rcParams['savefig.dpi'] = 300
 plt.rcParams['figure.dpi'] = 100
+# 리눅스, macOS는 한국어로 변경 후 폰트로 지정해야함
 # plt.rcParams['font.family']='Malgun Gothic'
 # plt.rcParams['font.size']=9
 plt.rcParams['image.cmap'] = "viridis"
