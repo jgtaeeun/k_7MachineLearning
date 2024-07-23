@@ -71,3 +71,16 @@ X_train, X_test, y_train, y_test =train_test_split(iris_database['data'], iris_d
   과소적합 : 문제 발생 시 더 많은 데이터를 통해 해결한다.
 
   *선형,이웃 알고리즘은 파라미터가 작을 때 주로 쓰며, 이 알고리즘들은 단순하기에 과대적합이 일어날 가능성이 높다
+  =======================
+그리드서치-스케일링(X_train , X_test  둘다 스케일링)
+
+파이프라인 -MAKE PIPELINES(이름이 자동으로 정해진다/여러개의 파이프라인 만들어 연결) - 서치
+
+sklearn에서 성분을 보기 위해서 _ 끝에 적어야 함 (예-pipe_short.named_steps["pca"].components_)
+
+pd.read_csv(data_url,sep=r"\s+" ,skiprows=22 , header=None)
+
+# 보스턴 주택 데이터를 평균으로 StandardScaler() 한다.  정규분포 그래프 (종 모양 그래프)
+# 평균으로 할 시에 평균특성이 사그라드므로 특성을 키우고자 PolynomialFeatures 한다. 이차곡선그래프(U)
+# 선형으로 선을 그어 회귀한다.Ridge()  선형그래프(/) =>보스턴 집값이 매우큰쪽과 매우작은쪽은 회귀의 정확도가 떨어질 것이다.
+pipe =make_pipeline(StandardScaler(), PolynomialFeatures(), Ridge())
